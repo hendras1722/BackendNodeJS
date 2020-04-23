@@ -1,5 +1,5 @@
 module.exports = {
-    response: (response, status, data, pagination) => {
+    response: (response, status, data) => {
         const result = {}
 
         result.status = status || 200
