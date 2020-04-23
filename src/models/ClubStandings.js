@@ -12,7 +12,7 @@ module.exports = {
     },
     readRank: (clubname) => {
         return new Promise((resolve, reject) => {
-            connection.query(`SELECT * FROM rank WHERE clubname LIKE '%${clubname}%'`,
+            connection.query(`SELECT * FROM rank WHERE clubname LIKE '%${clubname}%' ORDER BY points DESC`,
                 (error, result) => {
                     if (error) reject(new Error(error))
                     resolve(result)

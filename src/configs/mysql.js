@@ -1,5 +1,4 @@
 const mysql = require('mysql')
-const database = require('./index')
 require('dotenv/config')
 
 const connection = mysql.createConnection({
@@ -8,7 +7,6 @@ const connection = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 })
-
 
 connection.connect((error) => {
   if (error) console.log(error)
