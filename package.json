@@ -1,5 +1,5 @@
 {
-  "name": "posapp",
+  "name": "Football_Score",
   "version": "1.0.0",
   "description": "Restful with express",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "build": "some function"
   },
   "keywords": [
-    "backend,posapp"
+    "backend"
   ],
   "author": "Muh Syahedra Anindyantoro",
   "license": "ISC",
@@ -19,7 +19,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.9.1",
-    "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
     "redis": "^3.0.2",

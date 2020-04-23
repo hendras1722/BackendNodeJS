@@ -6,13 +6,11 @@ module.exports = {
         try {
             const {
                 clubname,
-                standing,
                 points,
             } = request.body
 
             const data = {
                 clubname,
-                standing,
                 points,
                 created_at: new Date(),
                 updated_at: new Date()
@@ -21,21 +19,16 @@ module.exports = {
             const result = await models.createRank(data)
             myConnection.response(response, 200, result, 'Success Added')
         } catch (error) {
-            myConnection.customErrorResponse(response, 404, 'Ups!!! you have problem at InsertCategory')
+            myConnection.customErrorResponse(response, 404, 'Data Failed')
         }
     },
     readRank: async (request, response) => {
-        // const limit = request.query.limit || 100
-        // const activePage = request.query.page || 1
-        const clubname = request.query.clubname || ''
-        // const sortBy = request.query.sortBy || 'id'
-        // const orderBy = request.query.orderBy || 'ASC'
-        const result = await models.readRank(clubname)
-        myConnection.response(response, 200, result)
         try {
-
+            const clubname = request.query.clubname || ''
+            const result = await models.readRank(clubname)
+            myConnection.response(response, 200, result)
         } catch (error) {
-            myConnection.customErrorResponse(response, 404, 'Ups!!! you have problem at AllCategory')
+            myConnection.customErrorResponse(response, 404, 'Data Failed')
         }
     },
     updateRank: async (request, response) => {
@@ -51,19 +44,19 @@ module.exports = {
             const result = await models.updateRank(data, Id)
             myConnection.response(response, 200, result)
         } catch (error) {
-            myConnection.customErrorResponse(response, 404, 'Ups!!! you have problem at UpdateCategory')
+            myConnection.customErrorResponse(response, 404, 'Data Failed')
         }
     },
     deleteRank: async (request, response) => {
-        // try {
-        const Id = request.params.Id
-        const data = {
-            Id
+        try {
+            const Id = request.params.Id
+            const data = {
+                Id
+            }
+            const result = await models.deleteRank(data)
+            myConnection.response(response, 200, result)
+        } catch (error) {
+            myConnection.customErrorResponse(response, 404, 'Data Failed')
         }
-        const result = await models.deleteRank(data)
-        myConnection.response(response, 200, result)
-        // } catch (error) {
-        //     myConnection.customErrorResponse(response, 404, 'Ups!!! you have problem at DeleteCategory')
-        // }
     }
 }
