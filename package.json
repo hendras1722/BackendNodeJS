@@ -1,7 +1,7 @@
 {
-  "name": "Football_Score",
+  "name": "DryPortV1",
   "version": "1.0.0",
-  "description": "Restful with express",
+  "description": "Test Dry Port",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
